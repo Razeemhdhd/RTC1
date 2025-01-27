@@ -26,8 +26,8 @@ KEY_PRICES = {
     'day': 150,   # 150 Rs per day
     'week': 600  # 600 Rs per week
 }
-ADMIN_IDS = [5545469644, 7702119573]
-BOT_TOKEN = "7567058488:AAGsBuxmphMuhqIMAa6M-loV_WnAp8v7Sf8"
+ADMIN_IDS = [5912395178,7702119573]
+BOT_TOKEN = "7043201666:AAFfVtpsP24qCmUoroxNwnXCvZhey2uUIx4"
 MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
 thread_count = 900
 packet_size = 9
@@ -401,7 +401,7 @@ def attack_command(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @SankexD ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
         return
 
     try:
@@ -429,7 +429,7 @@ def process_attack_command(message, chat_id):
         args = message.text.split()
         
         if len(args) != 3:
-            bot.send_message(chat_id, "*गलत हुआ है। ट्राई अगेन 😼*", parse_mode='Markdown')
+            bot.send_message(chat_id, "*ERROR 😼*", parse_mode='Markdown')
             return
         
         target_ip = args[0]
@@ -602,7 +602,7 @@ def send_welcome(message):
 
     if is_super_admin(user_id):
         welcome_message = (
-            f"Welcome, Super Admin! Developed By ᚛ @SankexD ᚜\n\n"
+            f"Welcome, Super Admin! Developed By ᚛ @TGRAZEEM ᚜\n\n"
             f"Admin Commands:\n"
             f"/addadmin - Add new admin\n"
             f"/removeadmin - Remove admin\n"
@@ -615,7 +615,7 @@ def send_welcome(message):
     elif is_admin(user_id):
         balance = get_admin_balance(user_id)
         welcome_message = (
-            f"Welcome, Admin! Developed By ᚛ @DHS_RAZEEM ᚜\n\n"
+            f"Welcome, Admin! Developed By ᚛ @TGRAZEEM ᚜\n\n"
             f"Your Balance: {balance}\n\n"
             f"Admin Commands:\n"
             f"/genkey - Generate new key\n"
@@ -624,7 +624,7 @@ def send_welcome(message):
         )
     else:
         welcome_message = (
-            f"Welcome, {username}! Developed By ᚛ @KaliaYtOwner ᚜\n\n"
+            f"Welcome, {username}! Developed By ᚛ @TGRAZEEM ᚜\n\n"
             f"Please redeem a key to access bot functionalities.\n"
             f"Available Commands:\n"
             f"/redeem - To redeem key\n"
@@ -640,7 +640,7 @@ def genkey_command(message):
     chat_id = message.chat.id
 
     if not is_admin(user_id):
-        bot.send_message(chat_id, "*You are not authorized to generate keys.\nContact Owner: ᚛ @KaliaYtOwner ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not authorized to generate keys.\nContact Owner: ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
         return
 
     cmd_parts = message.text.split()
@@ -773,7 +773,7 @@ def remove_user_command(message):
     chat_id = message.chat.id
 
     if not is_admin(user_id):
-        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @SankexD ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
         return
 
     cmd_parts = message.text.split()
@@ -838,12 +838,12 @@ def attack_button_handler(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00 ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
         return
 
     valid_until = datetime.fromisoformat(found_user['valid_until'])
     if datetime.now() > valid_until:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RIDERBHAI00 ᚜.*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS ᚜.*", parse_mode='Markdown')
         return
 
     try:
@@ -906,7 +906,7 @@ def my_account(message):
                 f"ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ: {current_time}"
             )
     else:
-        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @SankexD
+        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS
 
     bot.send_message(message.chat.id, account_info)
 
